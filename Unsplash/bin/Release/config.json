@@ -1,0 +1,23 @@
+{
+	"ImageWidth":1920, 
+	"ImageHeight":1080,
+	"Featured":false,
+	"_Featured_Comment": "Does the image used need to have once been featured? true or false",
+	"Schedule":null,
+	"_Schedule_Comment": "Enter 'daily', or 'weekly' or keep it as null",
+	"Category": null,
+	"_Category_Comment":"Enter a Category from this list, put between double quotes:
+		buildings
+		food
+		nature
+		people
+		technology
+		objects
+		or keep it as null",
+	"SearchTerm": null,
+	"_SearchTerm_Comment": "Enter any search term with double quotes around it. To add multiple, use a comma between text but keep it in the quotes",
+	"WallpaperStyle": "Fill",
+	"_WallpaperStyle_Comment": "NOT WORKING YET!!!
+	Use: Tile, Center, Strech, Fill, Fit, or Span, and encase in quotes, keep capitalization"
+
+}
