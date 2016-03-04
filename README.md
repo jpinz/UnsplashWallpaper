@@ -1,6 +1,8 @@
 # UnsplashWallpaper
 A program that sets your wallpaper to an image from unsplash.com
 
+It stores the photos in a folder titled Unsplash in the Pictures folder for the user.
+
 Use config.json to configure the program.
 
 It has configs for:
