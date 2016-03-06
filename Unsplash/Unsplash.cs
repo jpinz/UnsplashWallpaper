@@ -51,7 +51,7 @@ namespace Unsplash
             HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(url);
             webRequest.AllowAutoRedirect = false;  // IMPORTANT
 
-            webRequest.Timeout = 10000;           // timeout 10s
+            webRequest.Timeout = 11000;           // timeout 10s
             webRequest.Method = "HEAD";
             // Get the response ...
             HttpWebResponse webResponse;

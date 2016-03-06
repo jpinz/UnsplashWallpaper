@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Globalization;
 using System.IO;
-using System.Runtime.InteropServices;   
+using System.Runtime.InteropServices;
 using Microsoft.Win32;
+using System.Net;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace Unsplash
 {
@@ -27,15 +30,17 @@ namespace Unsplash
 
         public static void Set(Uri uri, Style style)
         {
-            Stream s = new System.Net.WebClient().OpenRead(uri.ToString());
+            Stream s = new System.Net.WebClient().OpenRead(uri.AbsoluteUri);
             String uris = uri.ToString();
-            System.Drawing.Image img = System.Drawing.Image.FromStream(s);
+            Image img = Image.FromStream(s);
             
-uris = uris.Substring(uris.IndexOf("ph"));
+            uris = uris.Substring(uris.IndexOf("ph"));
             uris = uris.Substring(0, uris.LastIndexOf("?"));
 
-            string tempPath = Path.Combine("C:/Users/"+ Environment.UserName+ "/Pictures/Unsplash", uris) + ".jpg";
-            img.Save(tempPath, System.Drawing.Imaging.ImageFormat.Jpeg);
+            string tempPath = "C:/Users/" + Environment.UserName + "/Pictures/Unsplash/" +  uris + ".jpg";
+            Directory.CreateDirectory("C:/Users/" + Environment.UserName + "/Pictures/Unsplash");
+            img.Save(tempPath, ImageFormat.Jpeg);
+            Console.Out.WriteLine(tempPath);
 
             RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Control Panel\Desktop", true);
             if (style == Style.Tile)
